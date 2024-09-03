@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <button onclick="loadData()">Recuperar Dados</button>
+
+        <script>
+            function loadCourses() {
+            console.log('Vamobora')
+            const xhr = new XMLHttpRequest() // classe responsável por fazer chamadas remotas
+
+            // xhr.open(, )
+            xhr.open("GET", "./json/list-courses.json") // Método que "abre" a conexão com os dados
+            xhr.send(null) // Método que faz a chamada
+
+            xhr.onreadystatechange = () => { // Quando terminar de fazer a requisição vai invocar a função de callback 
+                if(xhr.readyState === 4){ // Estado 'positivo'
+                    const resp = JSON.parse(xhr.responseText) // transformado dados da API em JSON para um Object JavaScript 
+                    console.log(resp) 
+                    console.log(resp) 
+                    console.log(resp) 
+                    console.log(resp) 
+                    
+                    
+                }
+            }  
+        }
+        loadCourses()
+        </script>
+    </body>
+</html>
